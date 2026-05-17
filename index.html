@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GCSE English Worksheet Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>GCSE English Worksheet Generator</h1>
+      <p class="intro">Pick your lesson options, then generate and print a worksheet.</p>
+
+      <form id="generator-form" class="controls">
+        <label>
+          Subject
+          <select id="subject" required>
+            <option value="English Language">GCSE English Language</option>
+            <option value="English Literature">GCSE English Literature</option>
+          </select>
+        </label>
+
+        <label>
+          Question Type or Text
+          <input
+            type="text"
+            id="questionType"
+            placeholder="e.g. Language Paper 1 Q4 or Macbeth ambition theme"
+            required
+          />
+        </label>
+
+        <label>
+          Target Grade
+          <select id="grade" required>
+            <option value="4">Grade 4</option>
+            <option value="5">Grade 5</option>
+            <option value="6">Grade 6</option>
+            <option value="7">Grade 7</option>
+            <option value="8">Grade 8</option>
+            <option value="9">Grade 9</option>
+          </select>
+        </label>
+
+        <label>
+          Student Support Level
+          <select id="support" required>
+            <option value="High">High support</option>
+            <option value="Medium" selected>Medium support</option>
+            <option value="Low">Low support</option>
+          </select>
+        </label>
+
+        <label>
+          Lesson Focus
+          <input
+            type="text"
+            id="focus"
+            placeholder="e.g. Structuring analytical paragraphs"
+            required
+          />
+        </label>
+
+        <div class="button-row">
+          <button type="submit">Generate Worksheet</button>
+          <button type="button" id="printBtn">Print</button>
+        </div>
+      </form>
+
+      <section id="worksheet" class="worksheet" aria-live="polite">
+        <h2>Worksheet preview will appear here.</h2>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
