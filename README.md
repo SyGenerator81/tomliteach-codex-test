@@ -1,8 +1,21 @@
-# TomliTeach Codex Test
+# GCSE English Worksheet Generator
 
-This is a simple test project to see whether Codex can help me build small educational tools for my tutoring business.
+A very simple browser-based worksheet generator for GCSE English.
 
-First goal:
-Create a simple GCSE English resource generator using HTML, CSS and JavaScript.
+## Files
 
-The tool should generate printable worksheets for GCSE English Language and Literature.
+- `index.html` – page structure and form controls
+- `styles.css` – simple layout + print styling
+- `script.js` – worksheet generation logic
+
+## How to use
+
+1. Open `index.html` in any modern browser (including Chromebook browsers).
+2. Choose:
+   - GCSE English Language or Literature
+   - Question type or text
+   - Target grade
+   - Student support level
+   - Lesson focus
+3. Click **Generate Worksheet**.
+4. Click **Print** to print or save as PDF.

@@ -1,0 +1,112 @@
+:root {
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --ink: #1f2937;
+  --muted: #4b5563;
+  --line: #d1d5db;
+  --accent: #1d4ed8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.intro {
+  color: var(--muted);
+}
+
+.controls,
+.worksheet {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+input,
+select,
+button {
+  font: inherit;
+  padding: 0.55rem;
+}
+
+.button-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--accent);
+}
+
+.worksheet section {
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px dashed var(--line);
+}
+
+.worksheet ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.2rem;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .controls,
+  .intro,
+  h1,
+  #printBtn {
+    display: none;
+  }
+
+  .container,
+  .worksheet {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    border: none;
+  }
+}
