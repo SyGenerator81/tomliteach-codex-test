@@ -3,29 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GCSE English Worksheet Generator</title>
+    <title>TomliTeach GCSE English Worksheet Generator</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="container">
-      <h1>GCSE English Worksheet Generator</h1>
-      <p class="intro">Pick your lesson options, then generate and print a worksheet.</p>
+      <header class="brand-header">
+        <p class="brand-name">TomliTeach</p>
+        <h1>TomliTeach GCSE English Worksheet Generator</h1>
+        <p class="tagline">Clarity. Confidence. Results.</p>
+        <p class="intro">Choose your lesson details, generate a worksheet, then print or save as PDF.</p>
+      </header>
 
       <form id="generator-form" class="controls">
         <label>
-          Subject
+          Subject Mode
           <select id="subject" required>
-            <option value="English Language">GCSE English Language</option>
-            <option value="English Literature">GCSE English Literature</option>
+            <option value="GCSE English Language Paper 1">GCSE English Language Paper 1</option>
+            <option value="GCSE English Language Paper 2">GCSE English Language Paper 2</option>
+            <option value="Macbeth">Macbeth</option>
+            <option value="A Christmas Carol">A Christmas Carol</option>
+            <option value="An Inspector Calls">An Inspector Calls</option>
+            <option value="Power and Conflict Poetry">Power and Conflict Poetry</option>
           </select>
         </label>
 
         <label>
-          Question Type or Text
+          Topic / Question Focus
           <input
             type="text"
             id="questionType"
-            placeholder="e.g. Language Paper 1 Q4 or Macbeth ambition theme"
+            placeholder="e.g. Macbeth: How does Shakespeare present ambition?"
             required
           />
         </label>
@@ -56,7 +64,7 @@
           <input
             type="text"
             id="focus"
-            placeholder="e.g. Structuring analytical paragraphs"
+            placeholder="e.g. Building analytical paragraphs with embedded quotations"
             required
           />
         </label>
