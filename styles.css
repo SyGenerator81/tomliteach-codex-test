@@ -6,6 +6,8 @@
   --line: #d1d5db;
   --accent: #0f4c81;
   --accent-soft: #e8f0f8;
+  --warn-bg: #fff4de;
+  --warn-ink: #8a5a00;
 }
 
 * {
@@ -22,7 +24,7 @@ body {
 .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.8rem;
 }
 
 h1,
@@ -30,6 +32,13 @@ h2,
 h3,
 h4 {
   margin-top: 0;
+  margin-bottom: 0.45rem;
+}
+
+p,
+ul {
+  margin-top: 0.3rem;
+  margin-bottom: 0.45rem;
 }
 
 .brand-header,
@@ -38,8 +47,8 @@ h4 {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: 0.85rem;
+  margin-bottom: 0.8rem;
 }
 
 .brand-header {
@@ -62,12 +71,12 @@ h4 {
 .controls {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.75rem;
+  gap: 0.55rem;
 }
 
 label {
   display: grid;
-  gap: 0.35rem;
+  gap: 0.3rem;
   font-weight: 600;
 }
 
@@ -75,7 +84,29 @@ input,
 select,
 button {
   font: inherit;
-  padding: 0.55rem;
+  padding: 0.48rem;
+}
+
+.print-option {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+}
+
+.question-warning {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--warn-ink);
+  background: var(--warn-bg);
+  border: 1px solid #f2d093;
+  border-radius: 6px;
+  padding: 0.35rem 0.5rem;
+  min-height: 1.7rem;
+}
+
+.question-warning:empty {
+  display: none;
 }
 
 .button-row {
@@ -96,27 +127,27 @@ button:hover {
 }
 
 .worksheet section {
-  margin-bottom: 0.8rem;
-  padding-bottom: 0.6rem;
+  margin-bottom: 0.55rem;
+  padding-bottom: 0.45rem;
   border-bottom: 1px dashed var(--line);
   page-break-inside: avoid;
 }
 
 .worksheet ul {
-  margin: 0.35rem 0 0;
+  margin: 0.25rem 0 0;
   padding-left: 1.2rem;
 }
 
 .student-line {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
 }
 
 .line-fill {
   display: inline-block;
-  min-width: 220px;
+  min-width: 170px;
   border-bottom: 1px solid var(--ink);
   height: 1rem;
   vertical-align: baseline;
@@ -127,34 +158,38 @@ button:hover {
   background: var(--accent-soft);
   border: 1px solid #c7dbef;
   border-radius: 6px;
-  padding: 0.6rem;
+  padding: 0.5rem;
 }
 
 .writing-lines {
   border: 1px solid var(--line);
   border-radius: 6px;
-  padding: 0.6rem;
-  line-height: 1.5;
-  min-height: 110px;
-  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 23px, #e5e7eb 24px);
+  padding: 0.5rem;
+  line-height: 1.45;
+  min-height: 90px;
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 21px, #e5e7eb 22px);
 }
 
 @media print {
   @page {
     size: A4;
-    margin: 12mm;
+    margin: 10mm;
   }
 
   body {
     background: #fff;
-    font-size: 11pt;
-    line-height: 1.3;
+    font-size: 10.5pt;
+    line-height: 1.22;
   }
 
   .controls,
   .intro,
   .tagline,
   #printBtn {
+    display: none;
+  }
+
+  body.hide-teacher-notes-print .teacher-notes-section {
     display: none;
   }
 
@@ -169,11 +204,15 @@ button:hover {
   }
 
   .brand-header {
-    margin-bottom: 8mm;
+    margin-bottom: 4mm;
   }
 
   .worksheet section {
-    margin-bottom: 4mm;
-    padding-bottom: 3mm;
+    margin-bottom: 2.5mm;
+    padding-bottom: 2mm;
+  }
+
+  .writing-lines {
+    min-height: 70px;
   }
 }
