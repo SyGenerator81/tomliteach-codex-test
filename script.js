@@ -6,6 +6,15 @@ const questionField = document.getElementById('questionType');
 const questionWarning = document.getElementById('questionWarning');
 const hideTeacherNotesPrintField = document.getElementById('hideTeacherNotesPrint');
 
+const questionPlaceholders = {
+  'GCSE English Language Paper 1': 'e.g. How does the writer use language to create tension?',
+  'GCSE English Language Paper 2': 'e.g. Compare how the writers present different attitudes to travel.',
+  Macbeth: 'e.g. How does Shakespeare present Macbeth’s ambition?',
+  'A Christmas Carol': 'e.g. How does Dickens present Scrooge’s redemption?',
+  'An Inspector Calls': 'e.g. How does Priestley present responsibility?',
+  'Power and Conflict Poetry': 'e.g. Compare how poets present the power of nature.'
+};
+
 const literatureSubjects = ['Macbeth', 'A Christmas Carol', 'An Inspector Calls', 'Power and Conflict Poetry'];
 
 function isLiteratureSubject(subject) {
@@ -239,7 +248,15 @@ function updateQuestionWarning() {
     : '';
 }
 
-subjectField.addEventListener('change', updateQuestionWarning);
+function updateQuestionPlaceholder() {
+  questionField.placeholder = questionPlaceholders[subjectField.value]
+    || 'e.g. Write a focused exam-style question.';
+}
+
+subjectField.addEventListener('change', () => {
+  updateQuestionPlaceholder();
+  updateQuestionWarning();
+});
 questionField.addEventListener('input', updateQuestionWarning);
 
 hideTeacherNotesPrintField.addEventListener('change', () => {
@@ -259,6 +276,8 @@ form.addEventListener('submit', (event) => {
 
   worksheet.innerHTML = createWorksheet(data);
 });
+
+updateQuestionPlaceholder();
 
 printBtn.addEventListener('click', () => {
   window.print();
